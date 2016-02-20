@@ -3,6 +3,7 @@
   "version": "1.0.0",
   "description": "a mashup using the soundcloud and europeana apis",
   "main": "server.js",
+  "private": true,
   "scripts": {
     "test": "mocha --compilers js:babel-core/register --require ./test/test_helper.js 'test/**/*@(js|jsx)"
   },
