@@ -1,5 +1,6 @@
-import React, { PropTypes } from 'react';
+import React from 'react';
 import { Provider } from 'react-redux';
+import DevTools from './DevTools';
 
 const Root = React.createClass({
   render: function() {
