@@ -1,11 +1,19 @@
 import React, { PropTypes } from 'react';
 import { connect } from 'react-redux';
-import Prompt from '../components/Prompt';
+import SearchForm from '../components/SearchForm';
 
 const App = React.createClass({
   render: function() {
     return (
-      <Prompt />
+      <main>
+        <h1>Sound Gallery</h1>
+        <SearchForm name='SearchForm'
+                    inputId='searchFormInput'
+                    prompt='What do you want to see and hear?'
+                    defaultValue=''
+                    onFormSubmit={ inputValue => console.log(inputValue) }
+                    />
+      </main>
     );
   }
 });
