@@ -1,5 +1,8 @@
-const rootReducer = function(state = {}, action) {
-  return state;
-};
+import { combineReducers } from 'redux';
+import searchQuery from './searchQuery';
+
+const rootReducer = combineReducers({
+  searchQuery
+});
 
 export default rootReducer;
