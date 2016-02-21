@@ -1,6 +1,5 @@
 import React, { PropTypes } from 'react';
 import classnames from 'classnames';
-import Prompt from './Prompt';
 
 const SearchForm = React.createClass({
   render: function() {
@@ -16,7 +15,9 @@ const SearchForm = React.createClass({
                ref='input'
                defaultValue={defaultValue} >
         </input>
-        <button type='submit'>Submit</button>
+        <button type='submit'>
+          Submit
+        </button>
       </form>
     );
   },
@@ -24,7 +25,8 @@ const SearchForm = React.createClass({
   handleSubmit: function(e) {
     e.preventDefault();
 
-    this.props.onFormSubmit(this.refs.input.value);
+    const inputValue = this.refs.input.value.trim();
+    this.props.onFormSubmit(inputValue);
     this.refs.input.value = '';
   }
 });
