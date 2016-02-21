@@ -6,8 +6,6 @@ const SearchForm = React.createClass({
     const { name, inputId, placeholder, defaultValue, prompt } = this.props;
     return (
       <form name={name} onSubmit={ e => this.handleSubmit(e) }>
-        <p>{prompt}</p>
-
         <input id={inputId}
                type='text'
                placeholder={placeholder}
@@ -32,7 +30,6 @@ const SearchForm = React.createClass({
 });
 
 SearchForm.propTypes = {
-  prompt: PropTypes.string.isRequired,
   name: PropTypes.string.isRequired,
   placeholder: PropTypes.string,
   inputId: PropTypes.string.isRequired,
