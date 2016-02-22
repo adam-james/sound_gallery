@@ -5,7 +5,7 @@ import { getMedia, clearSearchQuery } from '../actions';
 
 const App = React.createClass({
   render: function() {
-    const { dispatch, searchQuery, europeanaResults } = this.props;
+    const { dispatch, searchQuery, flickrResults } = this.props;
     return (
       <main>
         <h1>Sound Gallery</h1>
@@ -23,17 +23,17 @@ const App = React.createClass({
                       dispatch(getMedia(inputValue))
                     }
                     />
-        <Gallery errorMessage={europeanaResults.errorMessage}
-                 imagesData={europeanaResults.items} />
+        <Gallery errorMessage={flickrResults.errorMessage}
+                 imagesData={flickrResults.items} />
       </main>
     );
   }
 });
 
 function mapStateToProps(state) {
-  const { searchQuery, europeanaResults } = state;
+  const { searchQuery, flickrResults } = state;
 
-  return { searchQuery, europeanaResults };
+  return { searchQuery, flickrResults };
 }
 
 export default connect(mapStateToProps)(App);

@@ -1,5 +1,5 @@
 import { SET_SEARCH_QUERY, CLEAR_SEARCH_QUERY } from '../constants';
-import loadImages from './loadImages';
+import loadFlickrImages from './loadFlickrImages';
 
 function setSearchQuery(searchQuery) {
   return {
@@ -21,6 +21,6 @@ export function getMedia(searchQuery) {
   return function(dispatch, getState) {
     dispatch(setSearchQuery(searchQuery));
 
-    dispatch(loadImages());
+    dispatch(loadFlickrImages());
   };
 }

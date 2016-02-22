@@ -1,10 +1,10 @@
 import { combineReducers } from 'redux';
 import searchQuery from './searchQuery';
-import europeanaResults from './europeanaResults';
+import flickrResults from './flickrResults';
 
 const rootReducer = combineReducers({
   searchQuery,
-  europeanaResults
+  flickrResults
 });
 
 export default rootReducer;

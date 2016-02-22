@@ -5,7 +5,7 @@ const Gallery = React.createClass({
     const { errorMessage, imagesData } = this.props;
 
     const images = imagesData.map(function(item, index) {
-      return <img src={item.edmPreview} alt={item.title} key={index}></img>;
+      return <img src={item.media.m} alt={item.title} key={index}></img>;
     });
 
     return (
