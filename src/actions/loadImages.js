@@ -54,6 +54,8 @@ export default function loadImages() {
 
     dispatch(europeanaApiRequest());
 
+    console.log(url);
+
     return fetch(url)
         .then(function(response) {
           if (response.status >= 400) {
@@ -70,6 +72,5 @@ export default function loadImages() {
           }
           dispatch(europeanaApiSuccess(data));
         });
-
   };
 };

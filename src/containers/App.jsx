@@ -1,11 +1,11 @@
 import React, { PropTypes } from 'react';
 import { connect } from 'react-redux';
-import SearchForm from '../components/SearchForm';
+import { SearchForm, Gallery } from '../components';
 import { getMedia, clearSearchQuery } from '../actions';
 
 const App = React.createClass({
   render: function() {
-    const { dispatch, searchQuery } = this.props;
+    const { dispatch, searchQuery, europeanaResults } = this.props;
     return (
       <main>
         <h1>Sound Gallery</h1>
@@ -23,15 +23,17 @@ const App = React.createClass({
                       dispatch(getMedia(inputValue))
                     }
                     />
+        <Gallery errorMessage={europeanaResults.errorMessage}
+                 imagesData={europeanaResults.items} />
       </main>
     );
   }
 });
 
 function mapStateToProps(state) {
-  const { searchQuery } = state;
+  const { searchQuery, europeanaResults } = state;
 
-  return { searchQuery };
+  return { searchQuery, europeanaResults };
 }
 
 export default connect(mapStateToProps)(App);
