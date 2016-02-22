@@ -2,3 +2,7 @@ export const EUROPEANA_API_ROOT = 'http://europeana.eu/api/v2/search.json';
 
 export const SET_SEARCH_QUERY = 'SET_SEARCH_QUERY';
 export const CLEAR_SEARCH_QUERY = 'CLEAR_SEARCH_QUERY';
+
+export const EUROPEANA_API_REQUEST = 'EUROPEANA_API_REQUEST';
+export const EUROPEANA_API_SUCCESS = 'EUROPEANA_API_SUCCESS';
+export const EUROPEANA_API_FAILURE = 'EUROPEANA_API_FAILURE';

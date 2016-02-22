@@ -17,7 +17,8 @@ export default function europeanaResults(state = {
     case EUROPEANA_API_SUCCESS:
       return Object.assign({}, state, {
         areLoading: false,
-        items: [...action.payload.json]
+        errorMessage: '',
+        items: [...action.payload.json.items]
       });
     case EUROPEANA_API_FAILURE:
       return Object.assign({}, state, {

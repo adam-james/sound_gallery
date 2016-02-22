@@ -1,7 +1,7 @@
 import React, { PropTypes } from 'react';
 import { connect } from 'react-redux';
 import SearchForm from '../components/SearchForm';
-import { setSearchQuery, clearSearchQuery } from '../actions';
+import { getMedia, clearSearchQuery } from '../actions';
 
 const App = React.createClass({
   render: function() {
@@ -20,7 +20,7 @@ const App = React.createClass({
                     inputId='searchFormInput'
                     defaultValue=''
                     onFormSubmit={ inputValue =>
-                      dispatch(setSearchQuery(inputValue))
+                      dispatch(getMedia(inputValue))
                     }
                     />
       </main>

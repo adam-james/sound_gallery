@@ -1,6 +1,7 @@
 import { SET_SEARCH_QUERY, CLEAR_SEARCH_QUERY } from '../constants';
+import loadImages from './loadImages';
 
-export function setSearchQuery(searchQuery) {
+function setSearchQuery(searchQuery) {
   return {
     type: SET_SEARCH_QUERY,
     payload: {
@@ -14,3 +15,12 @@ export function clearSearchQuery() {
     type: CLEAR_SEARCH_QUERY
   };
 };
+
+export function getMedia(searchQuery) {
+
+  return function(dispatch, getState) {
+    dispatch(setSearchQuery(searchQuery));
+
+    dispatch(loadImages());
+  };
+}
