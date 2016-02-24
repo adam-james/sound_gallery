@@ -1,6 +1,6 @@
 import React, { PropTypes } from 'react';
 import { connect } from 'react-redux';
-import { SearchForm, Gallery } from '../components';
+import { SearchForm, Gallery, SoundCloud } from '../components';
 import { getMedia, clearSearchQuery } from '../actions';
 
 const App = React.createClass({
@@ -23,6 +23,7 @@ const App = React.createClass({
                       dispatch(getMedia(inputValue))
                     }
                     />
+        <SoundCloud url={'http://soundcloud.com/forss/flickermood'}/>
         <Gallery errorMessage={flickrResults.errorMessage}
                  imagesData={flickrResults.items} />
       </main>
