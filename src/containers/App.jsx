@@ -5,7 +5,15 @@ import { getMedia, clearSearchQuery } from '../actions';
 
 const App = React.createClass({
   render: function() {
-    const { dispatch, searchQuery, flickrResults } = this.props;
+    const { dispatch, searchQuery, flickrResults, soundcloudResults } = this.props;
+
+    let soundcloudUrl;
+    if (soundcloudResults.items.length > 0) {
+      soundcloudUrl = soundcloudResults.items[0].permalink_url;
+    } else {
+      soundcloudUrl = '';
+    }
+    
     return (
       <main>
         <h1>Sound Gallery</h1>
@@ -23,7 +31,7 @@ const App = React.createClass({
                       dispatch(getMedia(inputValue))
                     }
                     />
-        <SoundCloud url={'https://soundcloud.com/raaphorst/berlin-buskers'}/>
+        <SoundCloud url={soundcloudUrl}/>
         <Gallery errorMessage={flickrResults.errorMessage}
                  imagesData={flickrResults.items} />
       </main>
@@ -32,9 +40,9 @@ const App = React.createClass({
 });
 
 function mapStateToProps(state) {
-  const { searchQuery, flickrResults } = state;
+  const { searchQuery, flickrResults, soundcloudResults } = state;
 
-  return { searchQuery, flickrResults };
+  return { searchQuery, flickrResults, soundcloudResults };
 }
 
 export default connect(mapStateToProps)(App);

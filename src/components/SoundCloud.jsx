@@ -2,18 +2,12 @@ import React, { PropTypes } from 'react';
 import SC from 'soundcloud';
 
 const SoundCloud = React.createClass({
-  componentDidMount: function() {
-    SC.get('/tracks', {
-      q: 'buskers', license: 'cc-by-sa'
-    }).then(function(tracks) {
-      console.log(tracks);
-    });
-    SC.oEmbed(this.props.url, {
-      element: document.getElementById('soundCloudWidget')
-    });
-  },
-
   render: function() {
+    if (this.props.url) {
+      SC.oEmbed(this.props.url, {
+        element: document.getElementById('soundCloudWidget')
+      });
+    }
     return (
       <div id='soundCloudWidget'></div>
     );

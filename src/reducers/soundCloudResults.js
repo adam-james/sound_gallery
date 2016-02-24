@@ -4,7 +4,7 @@ import {
   SOUNDCLOUD_API_FAILURE,
 } from '../constants';
 
-export default function soundCloundResults(state = {
+export default function soundcloudResults(state = {
   areLoading: false,
   items: [],
   errorMessage: ''

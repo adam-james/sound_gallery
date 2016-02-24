@@ -1,4 +1,4 @@
-import soundCloudResults from '../src/reducers/soundCloudResults';
+import soundcloudResults from '../src/reducers/soundcloudResults';
 import {
   SOUNDCLOUD_API_REQUEST,
   SOUNDCLOUD_API_SUCCESS,
@@ -6,7 +6,7 @@ import {
 } from '../src/constants';
 import { expect } from 'chai';
 
-describe('soundCloudResults reducer', function() {
+describe('soundcloudResults reducer', function() {
 
   it('SOUNDCLOUD_API_REQUEST', function() {
     const state = {
@@ -14,7 +14,7 @@ describe('soundCloudResults reducer', function() {
       errorMessage: '',
       items: []
     };
-    const nextState = soundCloudResults(state, {
+    const nextState = soundcloudResults(state, {
       type: SOUNDCLOUD_API_REQUEST
     });
 
@@ -31,7 +31,7 @@ describe('soundCloudResults reducer', function() {
       errorMessage: '',
       items: []
     };
-    const nextState = soundCloudResults(state, {
+    const nextState = soundcloudResults(state, {
       type: SOUNDCLOUD_API_SUCCESS,
       payload: {
         json: [{test: 'data'}, {test: 'more data'}]
@@ -51,7 +51,7 @@ describe('soundCloudResults reducer', function() {
       errorMessage: '',
       items: []
     };
-    const nextState = soundCloudResults(state, {
+    const nextState = soundcloudResults(state, {
       type: SOUNDCLOUD_API_FAILURE,
       payload: {
         errorMessage: 'Something went wrong!'
