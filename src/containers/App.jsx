@@ -23,7 +23,7 @@ const App = React.createClass({
                       dispatch(getMedia(inputValue))
                     }
                     />
-        <SoundCloud url={'http://soundcloud.com/forss/flickermood'}/>
+        <SoundCloud url={'https://soundcloud.com/raaphorst/berlin-buskers'}/>
         <Gallery errorMessage={flickrResults.errorMessage}
                  imagesData={flickrResults.items} />
       </main>
