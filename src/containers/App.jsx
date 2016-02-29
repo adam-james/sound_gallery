@@ -13,9 +13,9 @@ const App = React.createClass({
     } else {
       soundcloudUrl = '';
     }
-    
+
     return (
-      <main>
+      <main className='container'>
         <h1>Sound Gallery</h1>
         { searchQuery ?
             <section>

@@ -1,4 +1,5 @@
 import 'babel-polyfill';
+import './scss/application.scss';
 import React from 'react';
 import { render } from 'react-dom';
 import SC from 'soundcloud';
