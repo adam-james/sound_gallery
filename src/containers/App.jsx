@@ -16,7 +16,7 @@ const App = React.createClass({
 
     return (
       <main className='container'>
-        <h1>Sound Gallery</h1>
+        <h1 className='six columns'>Sound Gallery</h1>
         { searchQuery ?
             <section>
               <p>{`You want to see and hear ${searchQuery}!`}</p>
@@ -31,6 +31,7 @@ const App = React.createClass({
                       dispatch(getMedia(inputValue))
                     }
                     />
+        <hr style={{marginTop: '75px'}}></hr>
         <SoundCloud url={soundcloudUrl}/>
         <Gallery errorMessage={flickrResults.errorMessage}
                  imagesData={flickrResults.items} />
