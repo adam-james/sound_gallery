@@ -8,6 +8,7 @@ const Footer = React.createClass({
           <small>Made by &copy; Adam James</small>
         </a>
         <br></br>
+        <br></br>
         <a href='https://github.com/adam-james' target='_blank'>
           <i className='fa fa-github'></i>
         </a>
