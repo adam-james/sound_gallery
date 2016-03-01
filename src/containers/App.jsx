@@ -1,6 +1,6 @@
 import React, { PropTypes } from 'react';
 import { connect } from 'react-redux';
-import { Header, Gallery, SoundCloud } from '../components';
+import { Header, Footer, Gallery, SoundCloud } from '../components';
 import { getMedia, clearSearchQuery } from '../actions';
 
 const App = React.createClass({
@@ -24,6 +24,7 @@ const App = React.createClass({
           <Gallery errorMessage={flickrResults.errorMessage}
                    imagesData={flickrResults.items} />
         </main>
+        <Footer />
       </div>
     );
   }

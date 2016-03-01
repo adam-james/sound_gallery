@@ -3,9 +3,21 @@
 }
 
 #title {
-  margin: 25px 0 40px 0;
+  margin-top: 25px;
+  margin-bottom: 40px;
 }
 
 #search-form {
-  margin: 25px 0 40px 0;
+  margin-top: 25px;
+  margin-bottom: 40px;
+}
+
+#footer {
+  left: 0;
+  right: 0;
+  bottom: 0;
+  height: 75px;
+  border-top: 1px solid gray;
+  text-align: center;
+  padding: 25px;
 }
