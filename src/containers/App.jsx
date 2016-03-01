@@ -10,6 +10,14 @@ const App = React.createClass({
     let main;
     if (flickrResults.areLoading && soundcloudResults.areLoading) {
       main = <main><p>Loading...</p></main>;
+    } else if (flickrResults.errorMessage || soundcloudResults.errorMessage) {
+      main = (
+        <p>
+          { flickrResults.errorMessage ? flickrResults.errorMessage
+                                       : soundcloudResults.errorMessage
+          }
+        </p>
+      );
     } else {
       main = (
         <main>

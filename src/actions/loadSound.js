@@ -45,6 +45,9 @@ export default function loadSound() {
     return SC.get('/tracks', {
       q
     }).then(function(tracks) {
+      if (tracks.length === 0) {
+        return dispatch(soundCloudApiFailure('No music results found!'));
+      }
       dispatch(soundCloudApiSuccess(tracks));
     }).catch(function(err) {
       console.log(err);
