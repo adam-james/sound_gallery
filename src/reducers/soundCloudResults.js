@@ -5,6 +5,7 @@ import {
 } from '../constants';
 
 export default function soundcloudResults(state = {
+  trackUrl: '',
   areLoading: false,
   items: [],
   errorMessage: ''
@@ -16,6 +17,7 @@ export default function soundcloudResults(state = {
       });
     case SOUNDCLOUD_API_SUCCESS:
       return Object.assign({}, state, {
+        trackUrl: action.payload.json[0].permalink_url,
         areLoading: false,
         errorMessage: '',
         items: action.payload.json

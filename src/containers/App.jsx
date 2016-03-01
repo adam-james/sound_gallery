@@ -7,20 +7,13 @@ const App = React.createClass({
   render: function() {
     const { dispatch, searchQuery, flickrResults, soundcloudResults } = this.props;
 
-    let soundcloudUrl;
-    if (soundcloudResults.items.length > 0) {
-      soundcloudUrl = soundcloudResults.items[0].permalink_url;
-    } else {
-      soundcloudUrl = '';
-    }
-
     return (
       <div className='container'>
         <Header onSearch={ inputValue =>
           dispatch(getMedia(inputValue))
         }/>
         <main>
-          <SoundCloud url={soundcloudUrl} />
+          <SoundCloud url={soundcloudResults.trackUrl} />
           <Gallery errorMessage={flickrResults.errorMessage}
                    imagesData={flickrResults.items} />
         </main>
