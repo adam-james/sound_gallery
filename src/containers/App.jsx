@@ -7,16 +7,25 @@ const App = React.createClass({
   render: function() {
     const { dispatch, searchQuery, flickrResults, soundcloudResults } = this.props;
 
-    return (
-      <div className='container'>
-        <Header onSearch={ inputValue =>
-          dispatch(getMedia(inputValue))
-        }/>
+    let main;
+    if (flickrResults.areLoading && soundcloudResults.areLoading) {
+      main = <main><p>Loading...</p></main>;
+    } else {
+      main = (
         <main>
           <SoundCloud url={soundcloudResults.trackUrl} />
           <Gallery errorMessage={flickrResults.errorMessage}
                    imagesData={flickrResults.items} />
         </main>
+      );
+    }
+
+    return (
+      <div className='container'>
+        <Header onSearch={ inputValue =>
+          dispatch(getMedia(inputValue))
+        }/>
+          { main }
         <Footer />
       </div>
     );
