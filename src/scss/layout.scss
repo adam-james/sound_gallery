@@ -100,3 +100,10 @@ $eleven-twelfths: 11 / 12 * 100%;
 .offset-eleven.columns {
   margin-left: $eleven-twelfths + 4%;
 }
+
+.container:after,
+.row:after {
+  content: "";
+  display: table;
+  clear: both;
+}

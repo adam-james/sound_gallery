@@ -8,7 +8,7 @@ const Header = React.createClass({
 
   render: function() {
     return (
-      <header id='header'>
+      <header id='header' className='row'>
         <h1 id='title' className='six columns'>Sound Gallery</h1>
         <SearchForm id='search-form'
                     className='six columns'
