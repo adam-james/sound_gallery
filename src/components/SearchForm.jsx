@@ -3,9 +3,15 @@ import classnames from 'classnames';
 
 const SearchForm = React.createClass({
   render: function() {
-    const { name, inputId, placeholder, defaultValue, prompt } = this.props;
+    const { id, name, inputId, className, placeholder, defaultValue, prompt } = this.props;
     return (
-      <form name={name} onSubmit={ e => this.handleSubmit(e) }>
+      <form id={id}
+            className={className}
+            name={name}
+            onSubmit={ e => this.handleSubmit(e) }>
+        { prompt &&
+          <p>{ prompt }</p>
+        }
         <input id={inputId}
                type='text'
                placeholder={placeholder}
@@ -30,6 +36,8 @@ const SearchForm = React.createClass({
 });
 
 SearchForm.propTypes = {
+  className: PropTypes.string,
+  prompt: PropTypes.string,
   name: PropTypes.string.isRequired,
   placeholder: PropTypes.string,
   inputId: PropTypes.string.isRequired,

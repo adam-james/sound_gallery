@@ -1,6 +1,6 @@
 import React, { PropTypes } from 'react';
 import { connect } from 'react-redux';
-import { SearchForm, Gallery, SoundCloud } from '../components';
+import { Header, Gallery, SoundCloud } from '../components';
 import { getMedia, clearSearchQuery } from '../actions';
 
 const App = React.createClass({
@@ -15,27 +15,16 @@ const App = React.createClass({
     }
 
     return (
-      <main className='container'>
-        <h1 className='six columns'>Sound Gallery</h1>
-        { searchQuery ?
-            <section>
-              <p>{`You want to see and hear ${searchQuery}!`}</p>
-              <button onClick={e => dispatch(clearSearchQuery())}>Reset</button>
-            </section>
-            : <p>{`What do you want to see and hear?`}</p>
-        }
-        <SearchForm name='SearchForm'
-                    inputId='searchFormInput'
-                    defaultValue=''
-                    onFormSubmit={ inputValue =>
-                      dispatch(getMedia(inputValue))
-                    }
-                    />
-        <hr style={{marginTop: '75px'}}></hr>
-        <SoundCloud url={soundcloudUrl}/>
-        <Gallery errorMessage={flickrResults.errorMessage}
-                 imagesData={flickrResults.items} />
-      </main>
+      <div className='container'>
+        <Header onSearch={ inputValue =>
+          dispatch(getMedia(inputValue))
+        }/>
+        <main>
+          <SoundCloud url={soundcloudUrl} />
+          <Gallery errorMessage={flickrResults.errorMessage}
+                   imagesData={flickrResults.items} />
+        </main>
+      </div>
     );
   }
 });
