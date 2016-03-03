@@ -6,8 +6,8 @@ const Gallery = React.createClass({
 
     const images = imagesData.map(function(item, index) {
       return (
-        <a href={item.link} target='_blank'>
-          <img src={item.media.m} alt={item.title} key={index}></img>
+        <a href={item.link} target='_blank' key={index}>
+          <img src={item.media.m} alt={item.title}></img>
         </a>
       );
     });
