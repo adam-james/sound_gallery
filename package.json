@@ -5,6 +5,8 @@
   "main": "server.js",
   "private": true,
   "scripts": {
+    "postinstall": "webpack --progress --colors",
+    "start": "node server.js",
     "test": "mocha --compilers js:babel-core/register --require ./test/test_helper.js 'test/**/*@(js|jsx)'"
   },
   "keywords": [
