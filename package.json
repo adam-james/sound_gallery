@@ -22,7 +22,7 @@
   "dependencies": {
     "express": "^4.13.4"
   },
-  "devDependencies": {
+  "dependencies": {
     "babel-core": "^6.5.2",
     "babel-loader": "^6.2.3",
     "babel-polyfill": "^6.5.0",
