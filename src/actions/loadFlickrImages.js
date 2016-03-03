@@ -52,14 +52,12 @@ export default function loadFlickrImages() {
 
     dispatch(flickrApiRequest());
 
-    console.log(url);
-
     return getJSON(url, function(data) {
       if (data.items.length < 1) {
         return dispatch(flickrApiFailure('No results found!'));
       }
       dispatch(flickrApiSuccess(data));
     });
-    
+
   };
 };

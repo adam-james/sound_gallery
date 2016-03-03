@@ -2,8 +2,8 @@ var webpack = require('webpack');
 
 module.exports = {
   entry: [
-    'webpack-dev-server/client?http://localhost:8080',
-    'webpack/hot/only-dev-server',
+    // 'webpack-dev-server/client?http://localhost:8080',
+    // 'webpack/hot/only-dev-server',
     './src/index.jsx'
   ],
   output: {
@@ -16,8 +16,13 @@ module.exports = {
     hot: true
   },
   plugins: [
-    new webpack.HotModuleReplacementPlugin(),
-    new webpack.NoErrorsPlugin()
+    // new webpack.HotModuleReplacementPlugin(),
+    // new webpack.NoErrorsPlugin(),
+    new webpack.optimize.UglifyJsPlugin(),
+    new webpack.DefinePlugin({
+      'process.env.NODE_ENV': '"production"',
+      'process.env.SOUNDCLOUD_CLIENT_ID': '"77206f6a4c15dcb4cb7e139e8a547b8c"'
+    })
   ],
   resolve: {
     extensions: ['', '.js', '.jsx']
