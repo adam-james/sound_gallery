@@ -1,15 +1,24 @@
+@media (min-width: 650px) {
+  #title {
+    margin-top: 25px;
+    margin-bottom: 40px;
+    float: left;
+  }
+
+  #search-form {
+    margin-top: 25px;
+    float: right;
+  }
+}
+
+@media (max-width: 650px) {
+  #search-form {
+    margin-bottom: 25px;
+  }
+}
+
 #header {
   border-bottom: 1px solid gray;
-}
-
-#title {
-  margin-top: 25px;
-  margin-bottom: 40px;
-}
-
-#search-form {
-  margin-top: 25px;
-  margin-bottom: 40px;
 }
 
 #gallery {

@@ -9,9 +9,8 @@ const Header = React.createClass({
   render: function() {
     return (
       <header id='header' className='row'>
-        <h1 id='title' className='pull-left'>Sound Gallery</h1>
+        <h1 id='title'>Sound Gallery</h1>
         <SearchForm id='search-form'
-                    className='pull-right'
                     name='SearchForm'
                     prompt='What do you want to see and hear?'
                     inputId='searchFormInput'
