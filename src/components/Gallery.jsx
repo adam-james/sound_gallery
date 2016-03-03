@@ -13,7 +13,7 @@ const Gallery = React.createClass({
     });
 
     return (
-      <section>
+      <section id='gallery'>
         { errorMessage &&
           <p>{errorMessage}</p> ||
           images }
