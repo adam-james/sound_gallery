@@ -18,7 +18,11 @@ module.exports = {
   plugins: [
     // new webpack.HotModuleReplacementPlugin(),
     // new webpack.NoErrorsPlugin(),
-    new webpack.optimize.UglifyJsPlugin(),
+    new webpack.optimize.UglifyJsPlugin({
+      compress: {
+        warnings: false
+      }
+    }),
     new webpack.DefinePlugin({
       'process.env.NODE_ENV': '"production"',
       'process.env.SOUNDCLOUD_CLIENT_ID': '"77206f6a4c15dcb4cb7e139e8a547b8c"'
