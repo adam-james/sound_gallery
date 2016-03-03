@@ -1,4 +1,5 @@
 import 'babel-polyfill';
+import 'file?name=[name].[ext]!./index.html';
 import './scss/application.scss';
 import React from 'react';
 import { render } from 'react-dom';
