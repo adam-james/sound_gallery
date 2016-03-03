@@ -5,9 +5,8 @@ const Footer = React.createClass({
     return (
       <footer id='footer'>
         <a href='http://adamjames.herokuapp.com/' target='_blank'>
-          <small>Made by &copy; Adam James</small>
+          <small>Made by <br></br><span id='signature'>Adam James</span></small>
         </a>
-        <br></br>
         <br></br>
         <a href='https://github.com/adam-james' target='_blank'>
           <i className='fa fa-github'></i>
