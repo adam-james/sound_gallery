@@ -1,4 +1,4 @@
-export const FLICKR_BASE_URL = 'http://api.flickr.com/services/feeds/photos_public.gne';
+export const FLICKR_BASE_URL = 'https://api.flickr.com/services/feeds/photos_public.gne';
 
 export const SET_SEARCH_QUERY = 'SET_SEARCH_QUERY';
 export const CLEAR_SEARCH_QUERY = 'CLEAR_SEARCH_QUERY';
